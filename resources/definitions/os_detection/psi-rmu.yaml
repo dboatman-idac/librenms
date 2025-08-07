@@ -1,0 +1,14 @@
+os: psi-rmu
+text: 'PSI RMU'
+type: power 
+icon: psi
+over:
+    - { graph: device_bits, text: 'Traffic'}
+    - { graph: device_processor, text: 'CPU' }
+    - { graph: device_mempool,   text: 'Memory' }
+discovery:
+    - sysObjectID: .1.3.6.1.4.1.8072.3.2.10
+      snmpget:
+        oid: .1.3.6.1.4.1.56153.22.1.2.0
+        op: "=="
+        value: "PSI-RTU"
